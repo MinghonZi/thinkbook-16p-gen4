@@ -1,22 +1,20 @@
 { config, pkgs, ... }:
 
 {
-  home = {
-    username = "minghongxu";
-    homeDirectory = "/home/minghongxu";
-    stateVersion = "23.05";
+  home.username = "minghongxu";
+  home.homeDirectory = "/home/minghongxu";
 
-    packages = [
-      # pkgs.git
-    ];
+  home.stateVersion = "23.05";
 
-    sessionVariables = {
-      # EDITOR = "nvim";
-    };
+  home.packages = [
+  ];
+
+  home.sessionVariables = {
+    # EDITOR = "nvim";
   };
 
   programs.home-manager.enable = true;
-  
+ 
   programs.git = {
     enable = true;
     userName = "Minghong Xu";
