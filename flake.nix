@@ -9,15 +9,18 @@
     };
   };
 
-  outputs = { nixpkgs, home-manager, ... }:
-    let
-      system = "x86_64-linux";
-      pkgs = nixpkgs.legacyPackages.${system};
-    in {
-      homeConfigurations."minghongxu" = home-manager.lib.homeManagerConfiguration {
-        inherit pkgs;
+  outputs = {
+    nixpkgs,
+    home-manager,
+    ...
+  }: let
+    system = "x86_64-linux";
+    pkgs = nixpkgs.legacyPackages.${system};
+  in {
+    homeConfigurations."minghongxu" = home-manager.lib.homeManagerConfiguration {
+      inherit pkgs;
 
-        modules = [ ./home.nix ];
-      };
+      modules = [ ./home.nix ];
     };
+  };
 }
